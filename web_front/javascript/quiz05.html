@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var img
+        var cnt = 0
+        function add() {
+        img = document.createElement('img');
+        img.src = 'resources/images/img.jpg'
+        img.width = 100
+        img.style.height = "100px"
+        img.setAttribute("onClick",`remove(${cnt})`);
+        img.id = cnt++
+        console.log( img )
+        document.getElementById("test").appendChild(img);
+        }
+        function remove( idx ) {
+        console.log("idx : "+idx);
+        document.getElementById(idx).remove();
+        }
+        </script>
+        <p id="test">test</p>
+        <a href="#" onclick="add()">[이미지 추가]</a>
+        
+</body>
+</html>

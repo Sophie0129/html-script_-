@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        test = () => {
+            let txt = document.getElementById('txt');
+            if( txt.value == ""){
+                alert('값 입력 하세요')
+                return;
+            }
+            //fo.submit();
+            console.log( fo );
+            console.log( fo.txt );
+            console.log( fo.ddd );
+            
+            let f = document.getElementById('fo');
+            console.log( f.querySelector(".div") )
+            //console.log( f.getElementById('ddd') )
+            f.querySelector(".div").innerHTML = '다른값 변경';
+            document.getElementById('ddd').innerHTML = '다른값 변경';
+        }
+    </script>
+</head>
+<body>
+    <form id='fo' action="ex31.html">
+        <div id="ddd" class="div">aaaa</div>
+        <input type="text" id="txt"><br>
+        <input type="submit" onclick="test()" value="submit전송">
+        <input type="button" onclick="test()" value="btn전송">
+    </form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #h3 { color: red; }
+    </style>
+</head>
+<body>
+    <script>
+        //function clickEvent(){}
+        const clickEvent = () => {
+            //alert("클릭");
+            const name = document.getElementById("name");
+            console.log( name );
+            /*
+            name.value = "안녕하세요";
+            name.style = "background: blue;"
+            name.style.background = "skyblue"
+            */
+            const name1 = document.querySelector("#name2");
+            console.log(name1);
+            name1.value = name.value;
+            name.value ="";
+        }
+        window.onload = () => {
+            //alert("onload");
+            //document.getElementsByClassName("btn")
+            const btn = document.querySelector(".btn");
+            console.log( btn )
+            btn.addEventListener("click", innerTest );
+        }
+        const innerTest = () =>{
+            const txt = document.getElementById("text");
+            let msg = "<h3 id='h3'>내용 바꾸기</h3>"
+            //txt.innerHTML = msg;
+            txt.innerText = msg;
+        }
+    </script>
+
+    <input type="text"  id="name"  placeholder="input name"><br>
+    <input type="text" id="name2" placeholder="input name"><br>
+    <input type="button" onclick = "clickEvent()" value="클릭">
+    <input type="button" class="btn" value="클릭">
+    <br>
+    <label id="text">텍스트 값</label>
+</body>
+</html>

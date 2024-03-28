@@ -1,0 +1,135 @@
+//////// if 1번 문제
+
+const num = prompt("수 입력");
+if( num % 3 == 0 ){ document.write("3의 배수입니다<br>"); }
+
+const num = prompt("수 입력");
+let result = num;
+if( num < 0 ) { result = -num; }
+document.write(`${num}의 절대값은 ${result}입니다`);
+
+const n1 = prompt("첫번째 수 입력");
+const n2 = prompt("두번째 수 입력");
+let max;
+if( n1 > n2 ){ max = n1; }
+if( n2 > n1 ){ max = n2; }
+document.write(`${max}가 큰값입니다`);
+
+const n1 = prompt("첫번째 수 입력");
+const n2 = prompt("두번째 수 입력");
+const n3 = prompt("세번째 수 입력");
+let max;
+if( n1 > n2 ){ max = n1; }
+if( n2 > n1 ){ max = n2; }
+if( n3 > max ){ max = n3; }
+document.write(`${n1}, ${n2}, ${n3} 중`);
+document.write(`${max}가 큰값입니다`);
+
+const n1 = prompt("첫번째 수 입력");
+const n2 = prompt("두번째 수 입력");
+let max;
+if( n1 > n2 ){ max = n1; }
+if( n2 > n1 ){ max = n2; }
+if( max%2 == 0 ){ document.write(`${max}은 크며 짝수`); }
+
+const n1 = prompt("첫번째 수 입력");
+const n2 = prompt("두번째 수 입력");
+const sum = Number(n1)+Number(n2);
+console.log(sum)
+let msg="";//값이 없으면 undefined가 나오므로 "" 사용함
+if( sum %2 == 0 && sum%3 == 0 ){ 
+	msg = sum+"은 짝수이며 3의 배수 입니다"; 
+}
+document.write(msg);
+
+
+//////// if 2번 문제
+
+let num = prompt("수(5의 배수) 입력");
+let msg;
+if( num %5 == 0 ){ msg = num+" : 5의 배수입니다<br>"; }
+else{ msg = num+" : 5의 배수가 아닙니다<br>"; }
+document.write(msg);
+
+num = prompt("수(0~100) 입력");
+if( num > 0 && num < 100 ){ msg = num+" : 정상<br>"; }
+else{ msg = num+" : 비정상<br>"; }
+document.write(msg);
+
+num = prompt("수(짝수이며 3의배수) 입력");
+if( num%2 == 0 && num %3 == 0 ){ msg = num+" : 짝수이며 3의배수<br>"; }
+else{ msg = num+" : 짝수이며 3의배수가 아닙니다<br>"; }
+document.write(msg);
+
+//////// if 3번 문제
+
+const coffee = prompt("커피 수 입력")
+let money = 0;
+if(coffee > 10) { money = 20000 + (coffee - 10)*1500; }
+else { money = coffee * 2000; }
+document.write(`${coffee}개의 가격은 ${money}원 입니다`);
+
+const usb = prompt("usb 수 입력")
+let money = 0;
+if(usb < 10)
+money = usb * 5000;
+else if( usb >=10 && usb < 100)
+money = usb*5000*0.9;
+//money = (usb*5000) - (usb*5000)/10;
+else
+money = usb*5000*0.88;
+//money = (usb*5000) - (usb*5000)*12/100;
+document.write(`${usb}개의 가격은 ${money}원 입니다`);
+
+
+//////// if 4번 문제
+
+const kor = prompt("국어 점수 입력");
+const eng = prompt("영어 점수 입력");
+const math = prompt("수학 점수 입력");
+const sum = Number(kor)+parseInt(eng)+Number(math);
+const avg = sum / 3; let msg, grade;
+if(avg >= 60 ){
+if(avg>=90){ grade = "A"}
+else if(avg>=80){ grade = "B"}
+else if(avg>=70){ grade = "C"}
+else{ grade = "D"}
+if(kor < 40){ msg = kor+" : kor 불합격"; }
+else if(eng < 40){ msg = (eng+" : eng 불합격"); }
+else if(math < 40){ msg = (math+" : math 불합격"); }
+else{ msg = ("합격 입니다"); }
+}else{ msg = avg+" : 평균 불합격"; grade = "FFFFF"; }
+document.write(`국 : ${kor} 점<br>`); document.write(`영 : ${eng} 점<br>`);
+document.write(`수 : ${math} 점<br>`);document.write(`합 : ${sum} 점<br>`);
+document.write(`평균 : ${avg.toFixed(2)} 점<br>`);
+document.write(`등급 : ${grade}<hr>`); document.write(`결과 : ${msg}<br>`);
+
+const num = prompt("수 입력")
+let msg;
+if( num == 0 ){
+	msg = num+"는 잘못입력";
+}else if(num %3 == 0 && num % 4 ==0){
+	msg = (num+" : 3,4의 배수입니다");
+}else if(num % 3 == 0){
+	msg = (num+" : 3의 배수입니다");
+}else if(num % 4 == 0){
+	msg = (num+" : 4의 배수입니다");
+}else{
+	msg = (num+" : 3,4의 배수가 아닙니다");
+}
+document.write(`결과 : ${msg}<br>`)
+
+let time = prompt("비행기 탄 시간(분) 입력")
+let money=30000;
+time -= 30;
+if(time>0){
+//money += (5000+parseInt((time-1)/10)*5000);
+if(time%10 == 0){
+money=money+time/10*5000;
+}
+else{
+money=money+parseInt(time/10)*5000+5000;
+}
+}
+document.write(`${time+30}분 비행기 요금 : ${money}원 입니다`);
+

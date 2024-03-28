@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        let member = []
+        let cnt = 0;
+        window.onload = () => {
+            let msg = "";
+            for(let i=0 ; i < 100 ; i++){
+                member[i] = i;
+                if( i < 10){
+                    msg += i+"<br>";
+                    cnt++;
+                }
+            }
+            console.log(member)
+            
+            $("#content").html( msg ); 
+        }
+        const view = () => {
+            let msg = "<hr>";
+            for( let i = cnt ; i <= cnt+10 ; i++ ){
+                   msg += member[i]+"<br>"
+            }
+            cnt += 10;
+            $("#content").append( msg ); 
+        }
+        const appendVal = () => { 
+            //document.getElementById("txt").insertBefore
+            $("#txt").append("내용 추가"); 
+        }
+        const htmlVal = () => { 
+            //document.getElementById("txt").innerHTML
+            $("#txt").html("내용 교체"); 
+        }
+        function inputVal(){
+            //var t = document.getElementById("val01").value;
+            var t = $("#val01").val();
+            $("#val01").val("");
+            $("#val02").val( t );
+        }
+    </script>
+</head>
+<body>
+    <div id="txt"></div> <hr>
+    <input type="text" id="val01"><br>
+    <input type="text" id="val02"><br>
+
+    <button onclick="inputVal()">input변경</button>
+    <button onclick="appendVal()">appendVal</button>
+    <button onclick="htmlVal()">htmlVal</button>
+    <hr>
+    <div id="content"></div>
+    <button onclick="view()">더보기</button>
+</body>
+</html>

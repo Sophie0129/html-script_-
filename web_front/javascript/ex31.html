@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = () => {
+            let myC = document.getElementById('myC')
+            myC.addEventListener('click', myConfirm );
+            let myO = document.getElementById('myO')
+            myO.addEventListener('click', myOpen );
+        }
+        function myOpen(){
+            //window.open();
+            //open('https://www.naver.com');
+            //window.open('https://www.naver.com','_self')
+            //window.open('ex30.html','','width=500,height=500')
+            window.open('popup.html','','width=500,height=500')
+        }
+        const myConfirm = () => {
+            let result = confirm('처음 방문???');
+            console.log( result )
+            let msg = '';
+            if(result){
+                msg = '처음 방문 감사감사!!!';
+            }else{
+                msg = '재 방문 감사감사!!!';
+            }
+            document.getElementById('myP').innerHTML = msg;
+        }
+    </script>
+</head>
+<body>
+    <button type="button" id="myC">클릭</button>
+    <p id="myP"></p>
+    <input type="button" id="myO" value="창열기">
+</body>
+</html>
